@@ -1,9 +1,10 @@
+import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from './components/common/Header.js';
-import Main from './components/common/Main.js';
-import Footer from './components/common/Footer.js';
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
