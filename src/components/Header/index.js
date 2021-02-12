@@ -44,14 +44,6 @@ function ElevationScroll(props) {
   });
 }
 
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 export const Header =  (props) => {
   const classes = useStyles();
 
@@ -83,7 +75,7 @@ export const Header =  (props) => {
       </ElevationScroll>
       <Toolbar />
       <Container>
-        <Box my={2}>
+        <Box my={10}>
           {[...new Array(12)]
             .map(
               () => `Cras mattis consectetur purus sit amet fermentum.
