@@ -3,7 +3,7 @@ import {
   GoogleMap,
   Polyline,
   Marker,
-} from 'react-google-maps';
+} from '@react-google-maps/api';
 
 export const Map = (props) => {
   const [progress, updateProgress] = useState(0);
@@ -13,8 +13,8 @@ export const Map = (props) => {
   const initialDate = new Date();
   const getDistance = () => {
     // seconds between when the component loaded and now
-    const differentInTime = (new Date() - this.initialDate) / 1000; // pass to seconds
-    return differentInTime * this.velocity; // d = v*t -- thanks Newton!
+    const differentInTime = (new Date() - initialDate) / 1000; // pass to seconds
+    return differentInTime * velocity; // d = v*t -- thanks Newton!
   };
 
   let path = [
@@ -99,14 +99,14 @@ export const Map = (props) => {
       return;
     }
 
-    let progress = path.filter(coordinates => coordinates.distance < distance);
+    let varProgress = path.filter(coordinates => coordinates.distance < distance);
 
-    const nextLine = this.path.find(coordinates => coordinates.distance > distance);
+    const nextLine = path.find(coordinates => coordinates.distance > distance);
     if (!nextLine) {
-      this.setState({ progress });
+      updateProgress({ varProgress });
       return; // it's the end!
     }
-    const lastLine = progress[progress.length - 1];
+    const lastLine = varProgress[varProgress.length - 1];
 
     const lastLineLatLng = new window.google.maps.LatLng(
       lastLine.lat,
@@ -128,8 +128,8 @@ export const Map = (props) => {
       percentage,
     );
 
-    progress = progress.concat(position);
-    this.setState({ progress });
+    varProgress = varProgress.concat(position);
+    updateProgress({ varProgress });
   };
 
   return (
@@ -137,14 +137,14 @@ export const Map = (props) => {
       defaultZoom={12}
       defaultCenter={{ lat: 18.559008, lng: -68.388881 }}
     >
-      {this.state.progress && (
+      {progress && (
         <>
           <Polyline
-            path={this.state.progress}
+            path={progress}
             options={{ strokeColor: '#FF0000 ' }}
           />
           <Marker
-            position={this.state.progress[this.state.progress.length - 1]}
+            position={progress[progress.length - 1]}
           />
         </>
       )}

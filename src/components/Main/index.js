@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Link, withRouter, Redirect } from 'react-router-dom';
-import { withGoogleMap, withScriptjs } from 'react-google-maps';
+import { withGoogleMap, withScriptjs } from '@react-google-maps/api';
 
-import Map from './map.js';
+import locationsData from '../../data.json';
+import { Map } from '../Map';
+import { SideList } from '../SideList';
+
 import { useStyles } from './styles.js';
 
 // const Header = (props) => {
 // needs a better way to handle conditional auth render
 
-const MapComponent = withScriptjs(withGoogleMap(Map));
+// const MapComponent = withScriptjs(withGoogleMap(Map));
 
 export const Main =  (props) => {
   // const [auth, setAuth] = React.useState(props.auth.username); 
@@ -20,12 +23,8 @@ export const Main =  (props) => {
 
   return (
     <main className={classes.main}>
-      <MapComponent
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px`, width: '500px' }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+      <SideList locations={locationsData}/>
+      <Map locations={locationsData}/>
     </main>
   );
 };
