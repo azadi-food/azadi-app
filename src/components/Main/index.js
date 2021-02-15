@@ -9,10 +9,6 @@ import { SideList } from '../SideList';
 
 import { useStyles } from './styles.js';
 
-// const Header = (props) => {
-// needs a better way to handle conditional auth render
-
-// const MapComponent = withScriptjs(withGoogleMap(Map));
 
 export const Main =  (props) => {
   // const [auth, setAuth] = React.useState(props.auth.username); 
@@ -22,7 +18,7 @@ export const Main =  (props) => {
   const classes = useStyles();
 
   return (
-    <main className={classes.main}>
+    <main className={classes.root}>
       <SideList locations={locationsData}/>
       <Map locations={locationsData}/>
     </main>

@@ -11,14 +11,10 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   toolbar: {
-    minHeight: 128,
-    alignItems: 'flex-start',
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(3),
   },
   title: {
     flexGrow: 1,
-    alignSelf: 'flex-end',
   },
 }));
 

@@ -53,16 +53,16 @@ export const Header =  (props) => {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar className={classes.toolbar}>
-            <IconButton
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="open drawer"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Typography className={classes.title} variant="h5" noWrap>
-              Material-UI
+              Azadi Food
             </Typography>
             <IconButton aria-label="search" color="inherit">
               <SearchIcon />
@@ -73,19 +73,7 @@ export const Header =  (props) => {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <Toolbar />
-      <Container>
-        <Box my={10}>
-          {[...new Array(12)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-            )
-            .join('\n')}
-        </Box>
-      </Container>
+      {/* <Toolbar /> */}
     </>
   );
 };

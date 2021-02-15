@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
-export function Map() {
+export function Map(props) {
   // const [progress, updateProgress] = useState(0);
   // const [interval, setInterval] = useState();
 
@@ -11,8 +11,7 @@ export function Map() {
   });
 
   const containerStyle = {
-    width: '100%',
-    height: '400px',
+    
   };
   
   const center = {
