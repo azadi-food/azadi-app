@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '1fr 1fr 4fr',
+    gridTemplateRows: '1fr 1fr 6fr',
     maxHeight: '90vh',
   },
 
@@ -29,9 +29,35 @@ export const useStyles = makeStyles((theme) => ({
     gridColumnEnd:'3',
     gridRowStart: '2',
     gridRowEnd: '3',
-    margin: '2em',
+    position: 'relative',
+    padding: '2em',
+    boxShadow: '0px 5px 5px -5px',
+    zIndex: '1',
   },
 
+  tagHeader: {
+    position: 'absolute',
+    top: '-25%',
+  },
+
+  tagReset: {
+    position: 'absolute',
+    top: '-15%',
+    left: '25%',
+  },
+
+  tagScroll: {
+    whiteSpace: 'nowrap',
+    overflowX: 'scroll',
+    overflowY: 'hidden',
+    paddingBottom: '1em',
+  },
+  '@global': {
+    'tagScroll::-webkit-scrollbar': {
+      width: '1px',
+    },
+  },
+  
   chip: {
     margin: '0 1em 0 0',
     borderRadius: '5%',
