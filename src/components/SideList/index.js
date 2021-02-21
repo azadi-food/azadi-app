@@ -127,7 +127,7 @@ export function SideList(props) {
               id: 'filled-age-native-simple',
             }}
           >
-            <option value="">Select A City</option>
+            <option value="">Select A District</option>
             { generateOptions(selects) }
           </Select>
         </FormControl>
